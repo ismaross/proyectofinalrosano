@@ -18,10 +18,6 @@ function iniciar() {
   } else {
     document.querySelector("#cronometro").classList.add("cronometro-oculto");
   }
-
-  let bandasonora = document.querySelector("#bandasonora");
-  bandasonora.currentTime = 0; 
-  bandasonora.play();
 }
 
 function reiniciar() {
@@ -33,6 +29,7 @@ function reiniciar() {
 function iniciaJuegoNormal() {
   modoRelax = false;
   document.querySelector("#bienvenida").classList.remove("visible");
+  document.querySelector("#bandasonora").play();
   iniciar();
   document.querySelector(".control-nivel").classList.add("control-oculto");
 }
@@ -40,5 +37,6 @@ function iniciaJuegoNormal() {
 function iniciaJuegoRelax() {
   modoRelax = true;
   document.querySelector("#bienvenida").classList.remove("visible");
+  document.querySelector("#bandasonora").play();
   iniciar();
 }
