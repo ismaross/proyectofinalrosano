@@ -1,5 +1,5 @@
 function actualizaContador() {
-  var movimientosTexto;
+  let movimientosTexto;
   movimientos++;
   movimientosTexto = movimientos;
 
@@ -12,10 +12,11 @@ function actualizaContador() {
     movimientosTexto = "0" + movimientos;
   }
   document.querySelector("#mov").innerText = movimientosTexto;
+  guardarProgreso();
 }
 
 function maxContador() {
-  var movimientosMaxTexto = niveles[nivelActual].movimientosMax;
+  let movimientosMaxTexto = niveles[nivelActual].movimientosMax;
   if (movimientosMaxTexto < 10) {
     movimientosMaxTexto = "0" + movimientosMaxTexto;
   }

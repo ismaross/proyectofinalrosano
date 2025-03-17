@@ -1,7 +1,7 @@
 function descubrir() {
-  var descubiertas;
-  var tarjetasPendientes;
-  var totalDescubiertas = document.querySelectorAll(
+  let descubiertas;
+  let tarjetasPendientes;
+  let totalDescubiertas = document.querySelectorAll(
     ".descubierta:not(.acertada)"
   );
 

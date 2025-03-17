@@ -1,7 +1,8 @@
 function escribeNiveles() {
-  var menuNiveles = document.querySelector(".selecciona-nivel ul");
+  let menuNiveles = document.querySelector(".selecciona-nivel ul");
+  menuNiveles.innerHTML = ''; // Clear existing levels
   niveles.forEach(function(elemento, indice) {
-    var controlNivel = document.createElement("li");
+    let controlNivel = document.createElement("li");
     controlNivel.innerHTML =
       "<button class='nivel' data-nivel=" +
       indice +
@@ -10,10 +11,14 @@ function escribeNiveles() {
       "</button>";
     menuNiveles.appendChild(controlNivel);
   });
+
+  document.querySelectorAll(".nivel").forEach(function(elemento) {
+    elemento.addEventListener("click", cambiaNivel);
+  });
 }
 
 function cambiaNivel() {
-  var nivel = parseInt(this.dataset.nivel);
+  let nivel = parseInt(this.dataset.nivel);
   nivelActual = nivel;
   actualizaNivel();
   iniciar();

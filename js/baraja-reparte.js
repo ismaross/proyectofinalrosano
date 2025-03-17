@@ -1,6 +1,6 @@
 function barajaTarjetas(lasTarjetas) {
-  var resultado;
-  var totalTarjetas = lasTarjetas.concat(lasTarjetas);
+  let resultado;
+  let totalTarjetas = lasTarjetas.concat(lasTarjetas);
   resultado = totalTarjetas.sort(function() {
     return 0.5 - Math.random();
   });
@@ -8,12 +8,12 @@ function barajaTarjetas(lasTarjetas) {
 }
 
 function reparteTarjetas(lasTarjetas) {
-  var mesa = document.querySelector("#mesa");
-  var tarjetasBarajadas = barajaTarjetas(lasTarjetas);
+  let mesa = document.querySelector("#mesa");
+  let tarjetasBarajadas = barajaTarjetas(lasTarjetas);
   mesa.innerHTML = "";
 
   tarjetasBarajadas.forEach(function(elemento) {
-    var tarjeta = document.createElement("div");
+    let tarjeta = document.createElement("div");
 
     tarjeta.innerHTML =
       "<div class='tarjeta' data-valor= " +

@@ -1,7 +1,12 @@
-// Escribimos los niveles dinámicamente
-escribeNiveles();
+async function iniciarJuego() {
+  await cargarNiveles();
+  escribeNiveles();
+  cargarProgreso();
+  document.querySelector("#bienvenida").classList.add("visible");
+}
 
-// Asignamos eventos iniciales
+iniciarJuego();
+
 document.querySelectorAll(".reiniciar").forEach(function(elemento) {
   elemento.addEventListener("click", reiniciar);
 });
@@ -20,15 +25,8 @@ document
   .querySelector("#cierra-niveles")
   .addEventListener("click", ocultaMenuNiveles);
 
-document.querySelectorAll(".nivel").forEach(function(elemento) {
-  elemento.addEventListener("click", cambiaNivel);
-});
-
 document.querySelector("#subir").addEventListener("click", cargaNuevoNivel);
 
 document.querySelector("body").addEventListener("click", clickFueraDeMenu);
 
 document.addEventListener("keydown", teclaEscCierraMenu);
-
-//Mostramos pantalla de bienvenida
-document.querySelector("#bienvenida").classList.add("visible");

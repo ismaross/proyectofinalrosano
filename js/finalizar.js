@@ -1,7 +1,7 @@
 function finalizar() {
   clearInterval(cronometro);
   document.querySelector("#bandasonora").pause();
-  document.querySelector("#bandasonora").currentTime = 0; // Ensure the background music stops
+  document.querySelector("#bandasonora").currentTime = 0;
   if (nivelActual < niveles.length - 1) {
     document.querySelector("#subeNivel").classList.add("visible");
   } else {

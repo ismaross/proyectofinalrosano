@@ -1,8 +1,8 @@
 function iniciaCronometro() {
-  var segundos = 10;
-  var minutos = 0;
-  var segundosTexto;
-  var minutosTexto;
+  let segundos = 10;
+  let minutos = 0;
+  let segundosTexto;
+  let minutosTexto;
 
   function actualizaContador() {
     segundos--;

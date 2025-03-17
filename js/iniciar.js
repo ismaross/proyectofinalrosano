@@ -1,4 +1,6 @@
-function iniciar() {
+async function iniciar() {
+  await cargarNiveles();
+  cargarProgreso();
   movimientos = 0;
   reparteTarjetas(niveles[nivelActual].tarjetas);
   document.querySelector("#mov").innerText = "00";
@@ -13,6 +15,8 @@ function iniciar() {
     elemento.addEventListener("click", descubrir);
   });
 
+  document.querySelector("#bandasonora").play(); // Ensure background music plays
+
   if (!modoRelax) {
     iniciaCronometro();
   } else {
@@ -22,6 +26,7 @@ function iniciar() {
 
 function reiniciar() {
   nivelActual = 0;
+  guardarProgreso();
   actualizaNivel();
   iniciar();
 }
