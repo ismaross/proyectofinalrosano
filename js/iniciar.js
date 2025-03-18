@@ -32,16 +32,18 @@ function reiniciar() {
 }
 
 function iniciaJuegoNormal() {
-  modoRelax = false;
+  modoRelax = false; // Deactivate Relax mode
+  document.querySelector("#contador-movimientos").classList.remove("oculto"); // Show movement counter
   document.querySelector("#bienvenida").classList.remove("visible");
   document.querySelector("#bandasonora").play();
-  iniciar();
+  iniciar(); // Restart the game
   document.querySelector(".control-nivel").classList.add("control-oculto");
 }
 
 function iniciaJuegoRelax() {
-  modoRelax = true;
+  modoRelax = true; // Activate Relax mode
+  document.querySelector("#contador-movimientos").classList.add("oculto"); // Hide movement counter
   document.querySelector("#bienvenida").classList.remove("visible");
   document.querySelector("#bandasonora").play();
-  iniciar();
+  iniciar(); // Restart the game
 }
