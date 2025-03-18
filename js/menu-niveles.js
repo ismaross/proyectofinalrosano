@@ -1,27 +1,22 @@
 function escribeNiveles() {
-  let menuNiveles = document.querySelector(".selecciona-nivel ul");
-  menuNiveles.innerHTML = ''; // Clear existing levels
-  niveles.forEach(function(elemento, indice) {
-    let controlNivel = document.createElement("li");
-    controlNivel.innerHTML =
-      "<button class='nivel' data-nivel=" +
-      indice +
-      ">Nivel " +
-      (indice + 1) +
-      "</button>";
-    menuNiveles.appendChild(controlNivel);
-  });
-
-  document.querySelectorAll(".nivel").forEach(function(elemento) {
-    elemento.addEventListener("click", cambiaNivel);
+  const menuNiveles = document.querySelector(".selecciona-nivel ul");
+  menuNiveles.innerHTML = ""; // Clear existing levels
+  niveles.forEach((elemento, indice) => {
+    const nivel = document.createElement("li");
+    nivel.innerHTML = `<button class="nivel" data-nivel="${indice}">Nivel ${indice + 1}</button>`;
+    nivel.querySelector("button").addEventListener("click", cambiaNivel); // Assign click event
+    menuNiveles.appendChild(nivel);
   });
 }
 
-function cambiaNivel() {
-  let nivel = parseInt(this.dataset.nivel);
-  nivelActual = nivel;
-  actualizaNivel();
-  iniciar();
+function cambiaNivel(evento) {
+  const nivelSeleccionado = parseInt(evento.target.dataset.nivel, 10);
+  if (!isNaN(nivelSeleccionado)) {
+    console.log("Nivel seleccionado:", nivelSeleccionado); // Debugging log
+    nivelActual = nivelSeleccionado;
+    guardarProgreso();
+    iniciar(); // Restart the game with the selected level
+  }
 }
 
 function muestraMenuNiveles(evento) {
@@ -41,7 +36,6 @@ function clickFueraDeMenu(evento) {
 }
 
 function teclaEscCierraMenu(evento) {
-  console.log(evento.key);
   if (evento.key === "Escape") {
     ocultaMenuNiveles();
   }

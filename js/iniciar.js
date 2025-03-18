@@ -19,8 +19,10 @@ async function iniciar() {
 
   if (!modoRelax) {
     iniciaCronometro();
+    document.querySelector("#contador-movimientos").classList.remove("oculto");
   } else {
     document.querySelector("#cronometro").classList.add("cronometro-oculto");
+    document.querySelector("#contador-movimientos").classList.add("oculto");
   }
 }
 
