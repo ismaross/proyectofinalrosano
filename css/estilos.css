@@ -243,7 +243,28 @@ button {
 
 button:hover,
 button:focus {
-  opacity: 0.9;
+  opacity: 0.9;  #titulo-juego {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 4rem;
+    font-family: 'Fredoka One', cursive;
+    display: inline-block;
+    line-height: 1.2;
+  }  #titulo-juego {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 4rem;
+    font-family: 'Fredoka One', cursive;
+    display: inline-block;
+    line-height: 1.2;
+  }  #titulo-juego {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 4rem;
+    font-family: 'Fredoka One', cursive;
+    display: inline-block;
+    line-height: 1.2;
+  }
   outline: 0;
 }
 
@@ -257,6 +278,17 @@ button:focus {
   margin: 0;
 }
 
+#titulo-juego {
+  background-color: brown;
+  text-align: center;
+  margin: 20px auto;
+  padding: 5px;
+  font-size: 4rem;
+  font-family: 'Fredoka One', cursive;
+  display: inline-block;
+  line-height: 1.2;
+  border-radius: 5px;
+}
 
 .sonido{
   display: none;
