@@ -1,31 +1,25 @@
 function iniciaCronometro() {
-  let segundos = 10;
-  let minutos = 0;
+  let tiempoRestante = niveles[nivelActual].tiempo; // Use the time from the current level
   let segundosTexto;
   let minutosTexto;
 
   function actualizaContador() {
-    segundos--;
-    if (segundos < 0) {
-      segundos = 59;
-      minutos--;
-    }
-    if (minutos < 0) {
-      segundos = 0;
-      minutos = 0;
+    tiempoRestante--;
+    if (tiempoRestante < 0) {
       clearInterval(cronometro);
       timeOver();
+      return;
     }
-    segundosTexto = segundos;
-    minutosTexto = minutos;
-    if (segundos < 10) {
-      segundosTexto = "0" + segundos;
-    }
-    if (minutos < 10) {
-      minutosTexto = "0" + minutos;
-    }
+    const minutos = Math.floor(tiempoRestante / 60);
+    const segundos = tiempoRestante % 60;
+
+    segundosTexto = segundos < 10 ? "0" + segundos : segundos;
+    minutosTexto = minutos < 10 ? "0" + minutos : minutos;
+
     document.querySelector("#minutos").innerText = minutosTexto;
     document.querySelector("#segundos").innerText = segundosTexto;
   }
+
+  actualizaContador(); // Initialize the display immediately
   cronometro = setInterval(actualizaContador, 1000);
 }

@@ -1,22 +1,27 @@
 [
   {
     "tarjetas": ["🦄", "🍦"],
-    "movimientosMax": 3
+    "movimientosMax": 4,
+    "tiempo": 30
   },
   {
     "tarjetas": ["🦄", "🍦", "🌈", "👽"],
-    "movimientosMax": 8
+    "movimientosMax": 10,
+    "tiempo": 60
   },
   {
     "tarjetas": ["🦄", "🍦", "🌈", "👽", "👾", "🤖", "👹", "👺"],
-    "movimientosMax": 12
+    "movimientosMax": 15,
+    "tiempo": 90
   },
   {
     "tarjetas": ["🦄", "🍦", "🌈", "👽", "👾", "🤖", "👹", "👺", "🤡", "💩", "🎃", "🙀"],
-    "movimientosMax": 25
+    "movimientosMax": 30,
+    "tiempo": 120
   },
   {
     "tarjetas": ["🦄", "🍦", "🌈", "👽", "👾", "🤖", "👹", "👺", "🤡", "💩", "🎃", "🙀", "☠️", "👾", "😽", "😼"],
-    "movimientosMax": 60
+    "movimientosMax": 72,
+    "tiempo": 180
   }
 ]
