@@ -30,3 +30,12 @@ document.querySelector("#subir").addEventListener("click", cargaNuevoNivel);
 document.querySelector("body").addEventListener("click", clickFueraDeMenu);
 
 document.addEventListener("keydown", teclaEscCierraMenu);
+
+// Add event listener for the reset levels button
+document.querySelector("#reset-niveles").addEventListener("click", () => {
+  localStorage.clear(); // Clear all stored progress
+  const bandasonora = document.querySelector("#bandasonora");
+  bandasonora.pause(); // Stop the audio
+  bandasonora.currentTime = 0; // Reset the audio to the beginning
+  location.reload(); // Reload the page to reset the game
+});

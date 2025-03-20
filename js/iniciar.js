@@ -15,7 +15,10 @@ async function iniciar() {
     elemento.addEventListener("click", descubrir);
   });
 
-  document.querySelector("#bandasonora").play(); // Ensure background music plays
+  const bandasonora = document.querySelector("#bandasonora");
+  bandasonora.pause(); // Stop the audio
+  bandasonora.currentTime = 0; // Reset the audio to the beginning
+  bandasonora.play(); // Play the audio again
 
   if (!modoRelax) {
     iniciaCronometro();
@@ -37,7 +40,6 @@ function iniciaJuegoNormal() {
   modoRelax = false; // Deactivate Relax mode
   document.querySelector("#contador-movimientos").classList.remove("oculto"); // Show movement counter
   document.querySelector("#bienvenida").classList.remove("visible");
-  document.querySelector("#bandasonora").play();
   iniciar(); // Restart the game
   document.querySelector(".control-nivel").classList.add("control-oculto");
 }
@@ -46,6 +48,5 @@ function iniciaJuegoRelax() {
   modoRelax = true; // Activate Relax mode
   document.querySelector("#contador-movimientos").classList.add("oculto"); // Hide movement counter
   document.querySelector("#bienvenida").classList.remove("visible");
-  document.querySelector("#bandasonora").play();
   iniciar(); // Restart the game
 }

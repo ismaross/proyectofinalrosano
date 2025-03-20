@@ -393,3 +393,24 @@ button:focus {
 .oculto {
   display: none;
 }
+
+.reset-niveles {
+  margin-top: 2rem; /* Increased margin to move it down */
+  padding: 1.7rem 2.1rem; /* Increased top padding by 20px */
+  background-image: var(--gradient);
+  color: white;
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.05rem; /* Reduced font size by 30% */
+  border: none;
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reset-niveles:hover,
+.reset-niveles:focus {
+  opacity: 0.9;
+  outline: none;
+}
